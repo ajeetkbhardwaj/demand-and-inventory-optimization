@@ -1,0 +1,7 @@
+__pycache__/
+.git/
+.DS_Store
+data/warehouse.duckdb
+data/warehouse.duckdb.wal
+data/raw/
+notebooks/

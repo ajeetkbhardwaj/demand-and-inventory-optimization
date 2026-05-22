@@ -1,0 +1,27 @@
+# Environments & Secrets
+.env
+.venv
+env/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+docs-math.md 
+Mathematical_Foundation.md 
+REPORT.md 
+# Data & Databases
+data/warehouse.duckdb
+data/warehouse.duckdb.wal
+data/raw/
+
+# Note: data/processed/analytical_results.parquet and src/models/*.pkl 
+# are currently ALLOWED so they can be pushed to Hugging Face Spaces.
+# If you train models natively inside your CI/CD pipeline, add them here.
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*

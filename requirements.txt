@@ -1,0 +1,12 @@
+pandas
+numpy
+scikit-learn
+statsmodels
+lightgbm
+pyspark
+streamlit
+duckdb
+plotly
+jupyter
+kaggle
+scipy

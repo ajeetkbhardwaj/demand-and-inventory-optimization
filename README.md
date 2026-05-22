@@ -11,7 +11,7 @@ pinned: false
 An applied mathematical and engineering-focused demand forecasting pipeline built for supply chain optimization. Designed to simulate enterprise tools (Databricks, Snowflake) using scalable open-source equivalents (Local PySpark, DuckDB) and modern AI techniques (LightGBM, NVIDIA NIM API).
 
 This project bridges the gap between advanced Machine Learning and Supply Chain Operations by translating daily demand predictions directly into **actionable inventory decisions**—specifically, dynamically optimized Safety Stock targets based on target Service Levels.
-
+Note : The data are locally stored so if we use the real time streaming data based onto the daily/weakly chunks then we can easly forecast our demands and take required inventory decisions ok.
 ## Architecture & Tech Stack
 
 * **Data Warehouse Simulation**: `DuckDB` acting as a local, fast analytical store (simulating Snowflake/BigQuery).

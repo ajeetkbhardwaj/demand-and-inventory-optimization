@@ -63,7 +63,14 @@ else:
     
     st.sidebar.markdown("---")
     st.sidebar.markdown("### 🤖 AI Co-Pilot LLM")
-    nv_api_key = st.sidebar.text_input("NVIDIA API Key", type="password", value=os.environ.get("NVIDIA_API_KEY", ""), help="Required to generate live LLM summaries. Securely loaded from environment if available.")
+    #nv_api_key = st.sidebar.text_input("NVIDIA API Key", type="password", value=os.environ.get("NVIDIA_API_KEY", ""), help="Required to generate live LLM summaries. Securely loaded from environment if available.")
+    
+    env_api_key = os.environ.get("NVIDIA_API_KEY", "")
+    if env_api_key:
+        nv_api_key = env_api_key
+        st.sidebar.success("🔑 NVIDIA API Key securely loaded from environment.")
+    else:
+        nv_api_key = st.sidebar.text_input("NVIDIA API Key", type="password", help="Required to generate live LLM summaries.")
     
     # Filter Data
     filtered_df = df[(df['store_nbr'] == selected_store) & (df['family'] == selected_family)].copy()

@@ -1,3 +1,11 @@
+---
+title: Demand And Inventory Optimization
+emoji: 🏆
+colorFrom: blue
+colorTo: red
+sdk: docker
+pinned: false
+---
 # End-to-End Retail Demand Planning & Inventory Optimization Pipeline
 
 An applied mathematical and engineering-focused demand forecasting pipeline built for supply chain optimization. Designed to simulate enterprise tools (Databricks, Snowflake) using scalable open-source equivalents (Local PySpark, DuckDB) and modern AI techniques (LightGBM, NVIDIA NIM API).

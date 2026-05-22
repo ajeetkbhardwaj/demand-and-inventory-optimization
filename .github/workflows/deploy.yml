@@ -24,6 +24,19 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
           
-          # IMPORTANT: Replace <your-username> and <your-space-name> below!
+          # 1. Clear existing Git history to prevent pushing large non-LFS historical blobs
+          rm -rf .git
+          git init
+          git branch -M main
+          
+          # 2. Track large files with Git LFS
+          git lfs install
+          git lfs track "*.parquet"
+          git lfs track "*.pkl"
+          
+          # 3. Commit the current state with LFS pointers and deploy
+          git add .
+          git commit -m "Automated deployment to Hugging Face"
+          
           git remote add huggingface https://oauth2:${HF_TOKEN}@huggingface.co/spaces/ajeet9843/demand-and-inventory-optimization
           git push --force huggingface main:main

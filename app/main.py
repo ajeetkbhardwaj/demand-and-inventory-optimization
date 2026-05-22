@@ -128,14 +128,14 @@ else:
         fig_hist = px.histogram(filtered_df, x='error', nbins=50, title="Residuals (Error) Distribution", opacity=0.75, color_discrete_sequence=['#8B5CF6'])
         fig_hist.add_vline(x=0, line_dash="dash", line_color="red", annotation_text="Zero Error")
         fig_hist.update_layout(height=350, margin=dict(l=0, r=0, t=30, b=0), plot_bgcolor='rgba(0,0,0,0)')
-        st.plotly_chart(fig_hist, use_container_width=True)
+        st.plotly_chart(fig_hist, width="stretch")
         
     with dist_col2:
         fig_scatter = px.scatter(filtered_df, x='sales', y='forecast_sales', opacity=0.6, title="Actual vs Predicted Sales", color_discrete_sequence=['#10B981'])
         max_val = max(filtered_df['sales'].max(), filtered_df['forecast_sales'].max())
         fig_scatter.add_trace(go.Scatter(x=[0, max_val], y=[0, max_val], mode='lines', name='Perfect Prediction', line=dict(color='red', dash='dash')))
         fig_scatter.update_layout(height=350, margin=dict(l=0, r=0, t=30, b=0), plot_bgcolor='rgba(0,0,0,0)')
-        st.plotly_chart(fig_scatter, use_container_width=True)
+        st.plotly_chart(fig_scatter, width="stretch")
 
     # Inventory Optimization Simulator
     st.markdown("---")
@@ -190,7 +190,7 @@ else:
         
         fig3 = px.bar(importance, x='Importance', y='Feature', orientation='h', title="Top 10 AI Demand Drivers (Information Gain)")
         fig3.update_layout(height=400, margin=dict(l=0, r=0, t=30, b=0), plot_bgcolor='rgba(0,0,0,0)')
-        st.plotly_chart(fig3, use_container_width=True)
+        st.plotly_chart(fig3, width="stretch")
         
         # Automated SKU-Level Business Report (Data Storytelling)
         top_3_features = ", ".join([f"**{f}**" for f in importance.tail(3)['Feature'].tolist()[::-1]])
